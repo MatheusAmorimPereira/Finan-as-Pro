@@ -1,0 +1,1493 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finanças Pro - Construa Seu Patrimônio com Inteligência</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animations.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <svg
+            class="logo-icon"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+          >
+            <rect width="32" height="32" rx="8" fill="url(#logoGradient)" />
+            <path
+              d="M8 22V10C8 8.89543 8.89543 8 10 8H22C23.1046 8 24 8.89543 24 10V22C24 23.1046 23.1046 24 22 24H10C8.89543 24 8 23.1046 8 22Z"
+              stroke="white"
+              stroke-width="2"
+            />
+            <path
+              d="M16 12V20M12 16H20"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <defs>
+              <linearGradient
+                id="logoGradient"
+                x1="0"
+                y1="0"
+                x2="32"
+                y2="32"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#00ff88" />
+                <stop offset="1" stop-color="#ffd700" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="logo-text"
+            >Finanças <span class="highlight">Pro</span></span
+          >
+        </div>
+        <div class="nav-links">
+          <a href="#home" class="nav-link active">Início</a>
+          <a href="#calculator" class="nav-link">Calculadora</a>
+          <a href="#simulator" class="nav-link">Simulador PRO</a>
+          <a href="#dashboard" class="nav-link">Dashboard</a>
+          <a href="#plans" class="nav-link">Planos</a>
+        </div>
+        <div class="nav-actions">
+          <button class="btn-login" onclick="openModal('loginModal')">
+            Entrar
+          </button>
+          <button class="btn-primary" onclick="openModal('registerModal')">
+            Começar Grátis
+          </button>
+        </div>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home" class="mobile-link" onclick="toggleMobileMenu()"
+        >Início</a
+      >
+      <a href="#calculator" class="mobile-link" onclick="toggleMobileMenu()"
+        >Calculadora</a
+      >
+      <a href="#simulator" class="mobile-link" onclick="toggleMobileMenu()"
+        >Simulador PRO</a
+      >
+      <a href="#dashboard" class="mobile-link" onclick="toggleMobileMenu()"
+        >Dashboard</a
+      >
+      <a href="#plans" class="mobile-link" onclick="toggleMobileMenu()"
+        >Planos</a
+      >
+      <button
+        class="btn-login mobile"
+        onclick="
+          openModal('loginModal');
+          toggleMobileMenu();
+        "
+      >
+        Entrar
+      </button>
+      <button
+        class="btn-primary mobile"
+        onclick="
+          openModal('registerModal');
+          toggleMobileMenu();
+        "
+      >
+        Começar Grátis
+      </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-grid"></div>
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
+      </div>
+      <div class="hero-content">
+        <div class="badge-pill">
+          <span class="badge-dot"></span>
+          <span>Novo: Assistente Financeiro IA</span>
+        </div>
+        <h1 class="hero-title">
+          Construa Seu Patrimônio<br />
+          com <span class="gradient-text">Inteligência</span>
+        </h1>
+        <p class="hero-subtitle">
+          Descubra o poder dos juros compostos com a ferramenta mais avançada do
+          mercado. Planejamento financeiro profissional na palma da sua mão.
+        </p>
+        <div class="hero-buttons">
+          <button
+            class="btn-primary large"
+            onclick="scrollToSection('calculator')"
+          >
+            <span>Começar Agora</span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+          <button class="btn-secondary large" onclick="openDemo()">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            <span>Ver Demo</span>
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">R$ 2.5B+</span>
+            <span class="stat-label">Patrimônio Simulado</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">50.000+</span>
+            <span class="stat-label">Usuários Ativos</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Satisfação</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="app-preview">
+          <div class="app-header">
+            <div class="app-dots"><span></span><span></span><span></span></div>
+            <span class="app-title">Finanças Pro</span>
+          </div>
+          <div class="app-content">
+            <div class="app-card main-card">
+              <div class="card-label">Patrimônio Projetado</div>
+              <div class="card-value" id="heroValue">R$ 0,00</div>
+              <div class="card-growth positive">+24.5% este ano</div>
+            </div>
+            <div class="app-chart">
+              <svg viewBox="0 0 300 100" class="chart-svg">
+                <defs>
+                  <linearGradient
+                    id="chartGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #00ff88; stop-opacity: 0.3"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #00ff88; stop-opacity: 0"
+                    />
+                  </linearGradient>
+                </defs>
+                <path
+                  class="chart-area"
+                  d="M0,100 Q50,80 100,70 T200,40 T300,20 L300,100 Z"
+                  fill="url(#chartGradient)"
+                />
+                <path
+                  class="chart-line"
+                  d="M0,100 Q50,80 100,70 T200,40 T300,20"
+                  fill="none"
+                  stroke="#00ff88"
+                  stroke-width="3"
+                />
+              </svg>
+            </div>
+            <div class="app-stats-row">
+              <div class="app-stat">
+                <span class="app-stat-label">Investido</span>
+                <span class="app-stat-value">R$ 120.000</span>
+              </div>
+              <div class="app-stat">
+                <span class="app-stat-label">Juros</span>
+                <span class="app-stat-value positive">R$ 84.320</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator-section">
+      <div class="section-header">
+        <span class="section-badge">Calculadora Avançada</span>
+        <h2 class="section-title">
+          Simule Seus <span class="highlight">Investimentos</span>
+        </h2>
+        <p class="section-subtitle">
+          Calcule o poder dos juros compostos com precisão profissional
+        </p>
+      </div>
+      <div class="calculator-container">
+        <div class="calculator-inputs">
+          <div class="input-group">
+            <label class="input-label">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v12M6 12h12" />
+              </svg>
+              Valor Inicial
+            </label>
+            <div class="input-wrapper">
+              <span class="input-prefix">R$</span>
+              <input
+                type="text"
+                id="initialValue"
+                class="money-input"
+                placeholder="10.000"
+                oninput="
+                  formatMoney(this);
+                  calculate();
+                "
+              />
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="input-label">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                />
+              </svg>
+              Aporte Mensal
+            </label>
+            <div class="input-wrapper">
+              <span class="input-prefix">R$</span>
+              <input
+                type="text"
+                id="monthlyContribution"
+                class="money-input"
+                placeholder="500"
+                oninput="
+                  formatMoney(this);
+                  calculate();
+                "
+              />
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="input-label">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+              Taxa de Juros
+            </label>
+            <div class="input-wrapper rate-wrapper">
+              <input
+                type="number"
+                id="interestRate"
+                class="rate-input"
+                placeholder="1.0"
+                step="0.01"
+                oninput="calculate()"
+              />
+              <span class="input-suffix">%</span>
+              <select id="rateType" class="rate-type" onchange="calculate()">
+                <option value="monthly">ao mês</option>
+                <option value="yearly">ao ano</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="input-label">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              Período
+            </label>
+            <div class="input-wrapper period-wrapper">
+              <input
+                type="number"
+                id="period"
+                class="period-input"
+                placeholder="12"
+                value="12"
+                oninput="calculate()"
+              />
+              <select
+                id="periodType"
+                class="period-type"
+                onchange="calculate()"
+              >
+                <option value="months">meses</option>
+                <option value="years">anos</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="input-label">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              Capitalização
+            </label>
+            <select
+              id="compounding"
+              class="compounding-select"
+              onchange="calculate()"
+            >
+              <option value="monthly">Mensal</option>
+              <option value="yearly">Anual</option>
+              <option value="daily">Diária</option>
+            </select>
+          </div>
+        </div>
+        <div class="calculator-results">
+          <div class="results-grid">
+            <div class="result-card primary">
+              <div class="result-icon"></div>
+              <div class="result-content">
+                <span class="result-value" id="finalValue">R$ 0,00</span>
+              </div>
+            </div>
+            <div class="result-card">
+              <div class="result-icon"></div>
+              <div class="result-content">
+                <span class="result-label">Total Investido</span>
+                <span class="result-value" id="totalInvested">R$ 0,00</span>
+              </div>
+            </div>
+            <div class="result-card">
+              <div class="result-icon"></div>
+              <div class="result-content">
+                <span class="result-label">Juros Acumulados</span>
+                <span class="result-value positive" id="interestEarned"
+                  >R$ 0,00</span
+                >
+              </div>
+            </div>
+            <div class="result-card">
+              <div class="result-icon"></div>
+              <div class="result-content">
+                <span class="result-label">Rentabilidade</span>
+                <span class="result-value positive" id="profitability">0%</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="investmentChart"></canvas>
+          </div>
+          <div class="ai-insights" id="aiInsights">
+            <div class="insights-header">
+              <span class="insights-icon"></span>
+              <span>Assistente Financeiro</span>
+            </div>
+            <div class="insights-content" id="insightsContent">
+              <p>
+                Preencha os dados acima para receber sugestões personalizadas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simulator PRO Section -->
+    <section id="simulator" class="simulator-section">
+      <div class="section-header">
+        <span class="section-badge">Simulador PRO</span>
+        <h2 class="section-title">
+          Compare <span class="highlight">Cenários</span>
+        </h2>
+        <p class="section-subtitle">
+          Analise múltiplas opções de investimento simultaneamente
+        </p>
+      </div>
+      <div class="simulator-container">
+        <div class="scenarios-grid" id="scenariosGrid">
+          <!-- Scenario A -->
+          <div class="scenario-card" data-scenario="A">
+            <div class="scenario-header">
+              <span class="scenario-letter">A</span>
+              <span class="scenario-name">Cenário A</span>
+            </div>
+            <div class="scenario-inputs">
+              <div class="scenario-input">
+                <label>Valor Inicial</label>
+                <input
+                  type="text"
+                  class="money-input"
+                  placeholder="10.000"
+                  data-scenario="A"
+                  data-field="initial"
+                />
+              </div>
+              <div class="scenario-input">
+                <label>Aporte Mensal</label>
+                <input
+                  type="text"
+                  class="money-input"
+                  placeholder="500"
+                  data-scenario="A"
+                  data-field="monthly"
+                />
+              </div>
+              <div class="scenario-input">
+                <label>Taxa %</label>
+                <input
+                  type="number"
+                  placeholder="1.0"
+                  step="0.01"
+                  data-scenario="A"
+                  data-field="rate"
+                />
+              </div>
+              <div class="scenario-input">
+                <label>Meses</label>
+                <input
+                  type="number"
+                  placeholder="12"
+                  value="12"
+                  data-scenario="A"
+                  data-field="months"
+                />
+              </div>
+            </div>
+            <div class="scenario-result">
+              <span class="result-label">Resultado</span>
+              <span class="result-value" id="resultA">R$ 0,00</span>
+            </div>
+          </div>
+          <!-- Scenario B -->
+          <div class="scenario-card" data-scenario="B">
+            <div class="scenario-header">
+              <span class="scenario-letter">B</span>
+              <span class="scenario-name">Cenário B</span>
+            </div>
+            <div class="scenario-inputs">
+              <div class="scenario-input">
+                <label>Valor Inicial</label>
+                <input
+                  type="text"
+                  class="money-input"
+                  placeholder="10.000"
+                  data-scenario="B"
+                  data-field="initial"
+                />
+              </div>
+              <div class="scenario-input">
+                <label>Aporte Mensal</label>
+                <input
+                  type="text"
+                  class="money-input"
+                  placeholder="500"
+                  data-scenario="B"
+                  data-field="monthly"
+                />
+              </div>
+              <div class="scenario-input">
+                <label>Taxa %</label>
+                <input
+                  type="number"
+                  placeholder="1.0"
+                  step="0.01"
+                  data-scenario="B"
+                  data-field="rate"
+                />
+              </div>
+              <div class="scenario-input">
+                <label>Meses</label>
+                <input
+                  type="number"
+                  placeholder="12"
+                  value="12"
+                  data-scenario="B"
+                  data-field="months"
+                />
+              </div>
+            </div>
+            <div class="scenario-result">
+              <span class="result-label">Resultado</span>
+              <span class="result-value" id="resultB">R$ 0,00</span>
+            </div>
+          </div>
+          <!-- Scenario C -->
+          <div class="scenario-card" data-scenario="C">
+            <div class="scenario-header">
+              <span class="scenario-letter">C</span>
+              <span class="scenario-name">Cenário C</span>
+            </div>
+            <div class="scenario-inputs">
+              <div class="scenario-input">
+                <label>Valor Inicial</label>
+                <input
+                  type="text"
+                  class="money-input"
+                  placeholder="10.000"
+                  data-scenario="C"
+                  data-field="initial"
+                />
+              </div>
+              <div class="scenario-input">
+                <label>Aporte Mensal</label>
+                <input
+                  type="text"
+                  class="money-input"
+                  placeholder="500"
+                  data-scenario="C"
+                  data-field="monthly"
+                />
+              </div>
+              <div class="scenario-input">
+                <label>Taxa %</label>
+                <input
+                  type="number"
+                  placeholder="1.0"
+                  step="0.01"
+                  data-scenario="C"
+                  data-field="rate"
+                />
+              </div>
+              <div class="scenario-input">
+                <label>Meses</label>
+                <input
+                  type="number"
+                  placeholder="12"
+                  value="12"
+                  data-scenario="C"
+                  data-field="months"
+                />
+              </div>
+            </div>
+            <div class="scenario-result">
+              <span class="result-label">Resultado</span>
+              <span class="result-value" id="resultC">R$ 0,00</span>
+            </div>
+          </div>
+        </div>
+        <div class="simulator-actions">
+          <button class="btn-primary" onclick="compareScenarios()">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+            Comparar Cenários
+          </button>
+          <button class="btn-secondary" onclick="resetScenarios()">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+              <path d="M3 3v5h5" />
+            </svg>
+            Limpar
+          </button>
+        </div>
+        <div class="comparison-result" id="comparisonResult">
+          <div class="ranking-header">
+            <span class="ranking-icon"></span>
+            <span>Ranking de Rentabilidade</span>
+          </div>
+          <div class="ranking-list" id="rankingList">
+            <!-- Rankings will be inserted here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard-section">
+      <div class="section-header">
+        <span class="section-badge">Dashboard</span>
+        <h2 class="section-title">
+          Sua Situação <span class="highlight">Financeira</span>
+        </h2>
+        <p class="section-subtitle">
+          Visualize o全景 do seu patrimônio em tempo real
+        </p>
+      </div>
+      <div class="dashboard-container">
+        <div class="dashboard-cards">
+          <div class="dashboard-card main">
+            <div class="card-header">
+              <span class="card-icon"></span>
+              <span class="card-title">Patrimônio Projetado</span>
+            </div>
+            <div class="card-value-large" id="dashboardPatrimony">R$ 0,00</div>
+            <div class="card-footer">
+              <span class="trend positive">↑ 24.5%</span>
+              <span class="trend-label">vs mês anterior</span>
+            </div>
+          </div>
+          <div class="dashboard-card">
+            <div class="card-header">
+              <span class="card-icon"></span>
+              <span class="card-title">Evolução Mensal</span>
+            </div>
+            <div class="card-value" id="dashboardMonthly">R$ 0,00</div>
+            <div class="mini-chart" id="miniChart">
+              <!-- Mini chart will be rendered here -->
+            </div>
+          </div>
+          <div class="dashboard-card">
+            <div class="card-header">
+              <span class="card-icon"></span>
+              <span class="card-title">Meta Financeira</span>
+            </div>
+            <div class="card-value" id="dashboardGoal">R$ 1.000.000</div>
+            <div class="progress-bar">
+              <div
+                class="progress-fill"
+                id="goalProgress"
+                style="width: 0%"
+              ></div>
+            </div>
+            <div class="progress-label">
+              <span id="goalPercentage">0%</span>
+              <span>da meta alcançada</span>
+            </div>
+          </div>
+          <div class="dashboard-card">
+            <div class="card-header">
+              <span class="card-icon"></span>
+              <span class="card-title">Taxa Média</span>
+            </div>
+            <div class="card-value" id="dashboardRate">1.0%</div>
+            <div class="card-footer">
+              <span class="rate-label">ao mês</span>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-chart">
+          <div class="chart-header">
+            <h3>Crescimento Patrimonial</h3>
+            <div class="chart-legend">
+              <span class="legend-item"
+                ><span class="legend-dot green"></span>Patrimônio</span
+              >
+              <span class="legend-item"
+                ><span class="legend-dot blue"></span>Investimento</span
+              >
+            </div>
+          </div>
+          <canvas id="dashboardChart"></canvas>
+        </div>
+        <div class="dashboard-actions">
+          <button class="btn-primary" onclick="saveSimulation()">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"
+              />
+              <polyline points="17 21 17 13 7 13 7 21" />
+              <polyline points="7 3 7 8 15 8" />
+            </svg>
+            Salvar Simulação
+          </button>
+          <button class="btn-secondary" onclick="exportData()">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Exportar Dados
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="plans-section">
+      <div class="section-header">
+        <span class="section-badge">Planos</span>
+        <h2 class="section-title">
+          Escolha o <span class="highlight">Plano Ideal</span>
+        </h2>
+        <p class="section-subtitle">
+          Comece gratuitamente e evolua conforme seu crescimento
+        </p>
+      </div>
+      <div class="plans-container">
+        <div class="plan-card free">
+          <div class="plan-header">
+            <span class="plan-icon">🌱</span>
+            <h3 class="plan-name">Gratuito</h3>
+            <div class="plan-price">
+              <span class="price-currency">R$</span>
+              <span class="price-value">0</span>
+              <span class="price-period">/mês</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Calculadora básica
+            </li>
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              3 simulações por dia
+            </li>
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Gráficos simples
+            </li>
+            <li class="feature excluded">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              Simulador PRO
+            </li>
+            <li class="feature excluded">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              Assistente IA
+            </li>
+            <li class="feature excluded">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              Histórico ilimitado
+            </li>
+          </ul>
+          <button class="btn-plan free" onclick="openModal('registerModal')">
+            Começar Grátis
+          </button>
+        </div>
+        <div class="plan-card pro featured">
+          <div class="plan-badge">Mais Popular</div>
+          <div class="plan-header">
+            <span class="plan-icon">⚡</span>
+            <h3 class="plan-name">PRO</h3>
+            <div class="plan-price">
+              <span class="price-currency">R$</span>
+              <span class="price-value">49</span>
+              <span class="price-period">/mês</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Calculadora avançada
+            </li>
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Simulações ilimitadas
+            </li>
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Simulador PRO completo
+            </li>
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Assistente Financeiro IA
+            </li>
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Histórico ilimitado
+            </li>
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Exportação de dados
+            </li>
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Suporte prioritário
+            </li>
+          </ul>
+          <button class="btn-plan pro" onclick="subscribePRO()">
+            Assinar Finanças Pro
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        <div class="plan-card enterprise">
+          <div class="plan-header">
+            <span class="plan-icon">🏢</span>
+            <h3 class="plan-name">Empresarial</h3>
+            <div class="plan-price">
+              <span class="price-currency">R$</span>
+              <span class="price-value">199</span>
+              <span class="price-period">/mês</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Tudo do PRO
+            </li>
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Múltiplos usuários
+            </li>
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              API completa
+            </li>
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Relatórios customizados
+            </li>
+            <li class="feature included">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Gerente de contas
+            </li>
+          </ul>
+          <button class="btn-plan enterprise" onclick="contactSales()">
+            Falar com Consultor
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premium PRO Section -->
+    <section id="premium" class="premium-section">
+      <div class="premium-container">
+        <div class="premium-badge">💎 Finanças Pro Premium</div>
+        <h2 class="premium-title">
+          Desbloqueie Todo o Potencial do Seu Dinheiro
+        </h2>
+        <p class="premium-subtitle">
+          Tenha acesso a recursos exclusivos que vão transformar sua vida
+          financeira
+        </p>
+
+        <div class="premium-grid">
+          <div class="premium-features">
+            <h3>✅ O que você ganha:</h3>
+            <ul class="premium-list">
+              <li>📊 Gráficos avançados e análises detalhadas</li>
+              <li>📋 Planilhas ilimitadas</li>
+              <li>📈 Simulações financeiras completas</li>
+              <li>🔒 Sem anúncios</li>
+              <li>💾 Histórico completo</li>
+              <li>🎯 Metas financeiras com acompanhamento</li>
+              <li>🔔 Alertas de gastos personalizados</li>
+              <li>📱 Interface premium</li>
+            </ul>
+            <div class="premium-price">
+              <span class="price-label">Por apenas</span>
+              <span class="price-amount">R$ 49</span>
+              <span class="price-period">/mês</span>
+            </div>
+          </div>
+
+          <div class="premium-payment">
+            <div class="pix-card">
+              <h3>💳 Pagamento via PIX</h3>
+              <p class="pix-instruction">
+                Escaneie o QR Code ou copie a chave PIX:
+              </p>
+
+              <div class="qr-code-container">
+                <img
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020126580014BR.GOV.BCB.PIX0136509d1d2-3e4f-5a6b-7c8d-9e0f1a2b3c4d5204000053039875802BR5913Finanças Pro6009São Paulo62070503***6304E2B3"
+                  alt="QR Code PIX"
+                  class="qr-code"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'block';
+                  "
+                />
+                <div class="qr-fallback" style="display: none">
+                  <div class="qr-placeholder">📱 QR Code</div>
+                </div>
+              </div>
+
+              <div class="pix-key-box">
+                <label>Chave PIX:</label>
+                <div class="pix-key" onclick="copyPixKey()">
+                  <span id="pixKeyDisplay">50916605850</span>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect
+                      x="9"
+                      y="9"
+                      width="13"
+                      height="13"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path
+                      d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+
+              <button class="btn-confirm-payment" onclick="confirmPayment()">
+                ✅ Já efetuei o pagamento
+              </button>
+              <p class="payment-message">
+                Após o pagamento, seu plano será ativado automaticamente!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <div class="contact-content">
+          <span class="contact-badge">Contato</span>
+          <h2 class="contact-title">
+            Precisa de ajuda ou quer acesso completo ao Finanças Pro?
+          </h2>
+          <p class="contact-subtitle">
+            Estamos prontos para tirar todas as suas dúvidas e ajudar você a
+            alcançar seus objetivos financeiros.
+          </p>
+          <div class="contact-buttons">
+            <a
+              href="https://wa.me/5511976172617"
+              target="_blank"
+              class="btn-whatsapp"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554-0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              Falar no WhatsApp agora
+            </a>
+            <button class="btn-email" onclick="openModal('contactModal')">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              Enviar E-mail
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <div class="logo">
+              <svg
+                class="logo-icon"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <rect
+                  width="32"
+                  height="32"
+                  rx="8"
+                  fill="url(#logoGradientFooter)"
+                />
+                <path
+                  d="M8 22V10C8 8.89543 8.89543 8 10 8H22C23.1046 8 24 8.89543 24 10V22C24 23.1046 23.1046 24 22 24H10C8.89543 24 8 23.1046 8 22Z"
+                  stroke="white"
+                  stroke-width="2"
+                />
+                <path
+                  d="M16 12V20M12 16H20"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <defs>
+                  <linearGradient
+                    id="logoGradientFooter"
+                    x1="0"
+                    y1="0"
+                    x2="32"
+                    y2="32"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#00ff88" />
+                    <stop offset="1" stop-color="#ffd700" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span class="logo-text"
+                >Finanças <span class="highlight">Pro</span></span
+              >
+            </div>
+            <p class="footer-tagline">
+              Construa seu patrimônio com inteligência. Descubra o poder dos
+              juros compostos.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-link">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-link">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-link">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Produto</h4>
+              <a href="#calculator">Calculadora</a>
+              <a href="#simulator">Simulador PRO</a>
+              <a href="#dashboard">Dashboard</a>
+              <a href="#plans">Planos</a>
+            </div>
+            <div class="footer-column">
+              <h4>Empresa</h4>
+              <a href="#">Sobre Nós</a>
+              <a href="#">Carreiras</a>
+              <a href="#">Blog</a>
+              <a href="#">Imprensa</a>
+            </div>
+            <div class="footer-column">
+              <h4>Legal</h4>
+              <a href="#">Termos de Uso</a>
+              <a href="#">Privacidade</a>
+              <a href="#">LGPD</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-contact">
+            <p class="footer-phone">📞 (11) 91327-4243</p>
+            <p class="footer-copyright">Finanças Pro © 2026</p>
+          </div>
+          <p class="footer-tagline-bottom">
+            Controle total da sua vida financeira.
+          </p>
+          <p class="footer-disclaimer">
+            Este site é apenas uma simulação para fins demonstrativos.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="loginModal">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('loginModal')">
+          &times;
+        </button>
+        <div class="modal-header">
+          <h3>Bem-vindo de volta!</h3>
+          <p>Entre na sua conta Finanças Pro</p>
+        </div>
+        <form class="modal-form" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label>Senha</label>
+            <input type="password" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn-primary full">Entrar</button>
+        </form>
+        <div class="modal-footer">
+          <p>
+            Não tem conta?
+            <a href="#" onclick="switchModal('loginModal', 'registerModal')"
+              >Cadastre-se</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="registerModal">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('registerModal')">
+          &times;
+        </button>
+        <div class="modal-header">
+          <h3>Crie sua conta!</h3>
+          <p>Comece a construir seu patrimônio hoje</p>
+        </div>
+        <form class="modal-form" onsubmit="handleRegister(event)">
+          <div class="form-group">
+            <label>Nome</label>
+            <input type="text" placeholder="Seu nome" required />
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label>Senha</label>
+            <input type="password" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn-primary full">Criar Conta</button>
+        </form>
+        <div class="modal-footer">
+          <p>
+            Já tem conta?
+            <a href="#" onclick="switchModal('registerModal', 'loginModal')"
+              >Entre</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="contactModal">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('contactModal')">
+          &times;
+        </button>
+        <div class="modal-header">
+          <h3>Fale Conosco</h3>
+          <p>Estamos prontos para ajudar você</p>
+        </div>
+        <form class="modal-form" onsubmit="handleContact(event)">
+          <div class="form-group">
+            <label>Nome</label>
+            <input type="text" placeholder="Seu nome" required />
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label>Mensagem</label>
+            <textarea
+              placeholder="Como podemos ajudar?"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-primary full">
+            Enviar Mensagem
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+      <span class="toast-icon">✓</span>
+      <span class="toast-message" id="toastMessage"
+        >Operação realizada com sucesso!</span
+      >
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
